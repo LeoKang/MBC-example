@@ -8,7 +8,7 @@ public class PersonExample {
         System.out.println(p1.ssn);
         System.out.println(p1.name);
 
-        p1.ssn = "654321-7654322";
+//        p1.ssn = "654321-7654322";
         p1.name = "LeeSoonsin";
 
     }
