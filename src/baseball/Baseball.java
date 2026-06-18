@@ -1,46 +1,85 @@
 package baseball;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Baseball {
+
     public static void main(String[] args) {
-        Random rd = new Random();
         Scanner sc = new Scanner(System.in);
-
-        int[] deck = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-
-        for (int i = 0; i < 100; i++) {
-            int rIdx = rd.nextInt(9);
-            int temp = deck[0];
-            deck[0] = deck[rIdx];
-            deck[rIdx] = temp;
-        }
-
-        int[] com = {deck[0], deck[1], deck[2]};
-
+        int[] num = new int[3];
         while (true) {
-            System.out.print("정수 3개 입력: ");
-            int[] user = {sc.nextInt(), sc.nextInt(), sc.nextInt()};
-
-            int strike = 0, ball = 0;
-
+            Arrays.fill(num, 0);
+            int str = 0, bl = 0;
+            num[0] = sc.nextInt();
+            num[1] = sc.nextInt();
+            num[2] = sc.nextInt();
             for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if (com[i] == user[j]) {
-                        int dummy = (i == j) ? strike++ : ball++;
+                if (scores[i] == num[i]) {
+                    str++;
+                } else {
+                    for (int j = 0; j < 3; j++) {
+                        if (scores[j] == num[i]) {
+                            bl++;
+                            break;
+                        }
                     }
                 }
             }
 
-            System.out.println("-> " + strike + ":S " + ball + ":B");
-            if (strike == 3) {
-                System.out.println("게임 종료!");
+            System.out.println("스트라이크 : " + str);
+            System.out.println("볼 : " + bl);
+
+            if (str == 3) {
+                System.out.println("아웃");
+                System.out.println("정답은 : " + Arrays.toString(scores));
                 break;
             }
         }
+
     }
 }
+
+
+//public class Baseball {
+//    public static void main(String[] args) {
+//        Random rd = new Random();
+//        Scanner sc = new Scanner(System.in);
+//
+//        int[] deck = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+//
+//        for (int i = 0; i < 100; i++) {
+//            int rIdx = rd.nextInt(9);
+//            int temp = deck[0];
+//            deck[0] = deck[rIdx];
+//            deck[rIdx] = temp;
+//        }
+//
+//        int[] com = {deck[0], deck[1], deck[2]};
+//
+//        while (true) {
+//            System.out.print("정수 3개 입력: ");
+//            int[] user = {sc.nextInt(), sc.nextInt(), sc.nextInt()};
+//
+//            int strike = 0, ball = 0;
+//
+//            for (int i = 0; i < 3; i++) {
+//                for (int j = 0; j < 3; j++) {
+//                    if (com[i] == user[j]) {
+//                        int dummy = (i == j) ? strike++ : ball++;
+//                    }
+//                }
+//            }
+//
+//            System.out.println("-> " + strike + ":S " + ball + ":B");
+//            if (strike == 3) {
+//                System.out.println("게임 종료!");
+//                break;
+//            }
+//        }
+//    }
+//}
 
 
 //public class Baseball {
@@ -60,9 +99,9 @@ public class Baseball {
 //            }
 //        } while (eq);
 //
-////        for (int i = 0; i < ar.length; i++) {
-////            System.out.print(ar[i] + " ");
-////        }
+/// /        for (int i = 0; i < ar.length; i++) {
+/// /            System.out.print(ar[i] + " ");
+/// /        }
 //    }
 //
 //
