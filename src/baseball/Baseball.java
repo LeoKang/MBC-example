@@ -4,42 +4,42 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Baseball {
+//public class Baseball {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int[] num = new int[3];
-        while (true) {
-            Arrays.fill(num, 0);
-            int str = 0, bl = 0;
-            num[0] = sc.nextInt();
-            num[1] = sc.nextInt();
-            num[2] = sc.nextInt();
-            for (int i = 0; i < 3; i++) {
-                if (scores[i] == num[i]) {
-                    str++;
-                } else {
-                    for (int j = 0; j < 3; j++) {
-                        if (scores[j] == num[i]) {
-                            bl++;
-                            break;
-                        }
-                    }
-                }
-            }
-
-            System.out.println("스트라이크 : " + str);
-            System.out.println("볼 : " + bl);
-
-            if (str == 3) {
-                System.out.println("아웃");
-                System.out.println("정답은 : " + Arrays.toString(scores));
-                break;
-            }
-        }
-
-    }
-}
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int[] num = new int[3];
+//        while (true) {
+//            Arrays.fill(num, 0);
+//            int str = 0, bl = 0;
+//            num[0] = sc.nextInt();
+//            num[1] = sc.nextInt();
+//            num[2] = sc.nextInt();
+//            for (int i = 0; i < 3; i++) {
+//                if (scores[i] == num[i]) {
+//                    str++;
+//                } else {
+//                    for (int j = 0; j < 3; j++) {
+//                        if (scores[j] == num[i]) {
+//                            bl++;
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//
+//            System.out.println("스트라이크 : " + str);
+//            System.out.println("볼 : " + bl);
+//
+//            if (str == 3) {
+//                System.out.println("아웃");
+//                System.out.println("정답은 : " + Arrays.toString(scores));
+//                break;
+//            }
+//        }
+//
+//    }
+//}
 
 
 //public class Baseball {
